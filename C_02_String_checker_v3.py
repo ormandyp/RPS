@@ -1,12 +1,12 @@
 # Check that users have entered a valid
 # option based on a list
-def string_checker(question, valid_ans=('yes', 'no')):
+def string_checker(question, valid_ans=['yes', 'no']):
 
     error = f"Please enter a valid option from the list: {valid_ans}"
 
     while True:
 
-        # get user response and make sure its lowercases
+        # get user response and make sure its lowercase
         user_response = input(question).lower()
 
         for item in valid_ans:
@@ -28,7 +28,7 @@ def string_checker(question, valid_ans=('yes', 'no')):
 
 rps_list = ["rock", "paper", "scissors", "xxx"]
 
-want_instructions = string_checker("Do you want to see instruction",)
+want_instructions = string_checker("Do you want to see instruction? ",)
 
 print("you chose ", want_instructions)
 
