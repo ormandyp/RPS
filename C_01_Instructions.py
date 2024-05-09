@@ -1,14 +1,26 @@
-# checks user enter yes (y) or no (n)
-def yes_no(question):
-    while True:
-        response = input(question).lower()
+# Check that users have entered a valid
+# option based on a list
+def string_checker(question, valid_ans=('yes', 'no')):
+    error = f"Please enter a valid option from the list: {valid_ans}"
 
-        if response == "yes" or response == "y":
-            return "yes"
-        elif response == "no" or response == "n":
-            return "no"
-        else:
-            print("you did not choose a valid response")
+    while True:
+
+        # get user response and make sure its lowercase
+        user_response = input(question).lower()
+
+        for item in valid_ans:
+            # check if the user response is a word in the list
+            if item == user_response:
+                return item
+
+            # check if the user response is the same as
+            # the first letter of an item in the list
+            elif user_response == item[0]:
+                return item
+
+        # print error if user does not enter somthing that is valid
+        print(error)
+        print()
 
 
 def instruction():
@@ -16,27 +28,32 @@ def instruction():
     
 **** instructions ****
 
-To begin, decide the overall score needed to be crowned the winner of the game 
-(eg: first person to get a score of 50 or more).
+To begin, choose the numbers of rounds (or press <enter> for
+infinite mode).
 
-At the start of each round, the user and the computer each roll two dice. 
-The initial number of points for each player is the total shown by the dice. Then, taking turns,
-the user and computer each roll a single die and add the result to their points.
-The goal is to get 13 points (or slightly less) for a given round. 
-Once you are happy with your number of points, you can ‘pass’.
+Then play against the computer. You need to choose R (rock),
+P (paper) or S (scissors.
+
+The rules are as follows:
+o Paper beats rock
+o Rock beats scissors
+o Scissors beats paper
+
+press <xxx> to end the game at anytime
+
+Good luck!
     
     ''')
 
 
 # main routine
 print()
-print("🎲🎲 Roll it 13 🎲🎲")
+print("Rock / Paper / Scissors game ")
 print()
 
-# loop for testing purposes
-
-
-want_instructions = yes_no("Do you want to read the instructions? ")
+# ask user if they want to see the instructions
+# them if requested
+want_instructions = string_checker("Do you want to read the instructions? ")
 
 if want_instructions == "yes":
     instruction()
