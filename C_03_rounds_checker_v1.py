@@ -3,7 +3,7 @@ def int_check(to_check):
     while True:
         error = "Please enter an integer that is 13 or more."
 
-        #check for infinite mode
+        # check for infinite mode
         if to_check == "":
             return "infinite"
 
@@ -19,7 +19,6 @@ def int_check(to_check):
         except ValueError:
             # print(error)
             return "invalid"
-
 
 # Automated testing is below in the form (test_case, expected_value)
 to_test = [
@@ -44,4 +43,4 @@ for item in to_test:
     if actual == expected:
         print(f" ✅✅✅Passed! Case: {case}, expected: {expected}, received: {actual} ✅✅✅")
     else:
-        print(f"❌❌❌ Failed! Case: {case}, expected: {expected},")
+        print(f"❌❌❌ Failed! Case: {case}, expected: {expected}, received: {actual} ❌❌❌")
