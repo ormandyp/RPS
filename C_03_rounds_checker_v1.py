@@ -1,4 +1,4 @@
-
+# checks for an integer more than 0 (allows <enter>)
 def int_check(to_check):
     while True:
         error = "Please enter an integer that is 13 or more."
